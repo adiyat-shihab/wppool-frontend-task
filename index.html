@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <style>
+      #banner {
+        background: url("/particle.png") lightgray 50% / cover no-repeat;
+        mix-blend-mode: multiply;
+      }
+      .sticky {
+        position: sticky;
+        top: 1.25rem;
+        z-index: 1000;
+      }
+      @font-face {
+        font-family: "Nantes";
+        src: url("/Nantes-Regular.ttf");
+      }
+      @font-face {
+        font-family: "MessinaSans";
+        src: url("/MessinaSans-Regular.ttf");
+      }
+      .nantesFont {
+        font-family: Nantes;
+      }
+      .messinaFont {
+        font-family: MessinaSans;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="bg-[#2042B6] py-5" id="banner">
+        <!-- navbar -->
+        <div id="navbar" class="sticky bg-[#2042B6]">
+          <div
+            class="flex rounded-lg scrolled px-[2.25rem] justify-between w-full text-white py-[0.75rem]"
+          >
+            <img src="/logo.svg" alt="logo" />
+            <div class="flex items-center gap-3">
+              <img
+                src="/sharelogo.svg"
+                class="border p-[0.9rem] rounded-full"
+              />
+              <button class="px-4 py-3 border rounded-[7.75rem]">
+                Download the 2024 Report
+              </button>
+              <img src="/NavBarLogo.svg" class="pl-3" />
+            </div>
+          </div>
+        </div>
+        <!-- banner -->
+        <div class="px-[2.75rem] h-[80vh]" id="banner">
+          <div class="nantesFont text-white flex flex-col gap-y-[3.12rem]">
+            <div>
+              <h1 class="text-[2.5rem]">60</h1>
+              <h3 class="text-[1rem]">Companies</h3>
+            </div>
+            <div>
+              <h1 class="text-[2.5rem]">$100B</h1>
+              <h3 class="text-[1rem]">Market cap</h3>
+            </div>
+            <div>
+              <h1 class="text-[2.5rem]">3.5x</h1>
+              <h3 class="text-[1rem]">Revenue multiple</h3>
+            </div>
+            <div>
+              <h1 class="text-[2.5rem]">60%</h1>
+              <h3 class="text-[1rem]">LTM avg. revenue growth rate</h3>
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.remove("bg-[#2042B6]");
+          navbar.classList.add("bg-[#F3F3F3]");
+        } else {
+          navbar.classList.remove("bg-[#F3F3F3]");
+          navbar.classList.add("bg-[#2042B6]");
+        }
+      });
+    </script>
+  </body>
+</html>
